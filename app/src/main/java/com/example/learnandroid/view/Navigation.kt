@@ -5,6 +5,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import com.example.learnandroid.viewmodel.FirstScreenViewModel
+import com.example.learnandroid.viewmodel.RegisterScreenViewModel
 import com.example.learnandroid.viewmodel.SecondScreenViewModel
 
 @Composable
@@ -14,6 +15,11 @@ fun AppNavigation(navController: NavHostController) {
         composable("first") {
             val viewModel: FirstScreenViewModel = viewModel()
             FirstScreen(viewModel = viewModel, navController = navController)
+        }
+
+        composable("register") {
+            val viewModel: RegisterScreenViewModel = viewModel()
+            RegisterScreen(viewModel = viewModel, navController = navController)
         }
 
         composable("second") {
