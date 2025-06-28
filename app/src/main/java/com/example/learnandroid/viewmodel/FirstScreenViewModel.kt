@@ -1,9 +1,7 @@
 package com.example.learnandroid.viewmodel
 
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 
 class FirstScreenViewModel : ViewModel() {
     var email by mutableStateOf("")
