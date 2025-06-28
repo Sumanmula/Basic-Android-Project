@@ -1,10 +1,14 @@
 package com.example.learnandroid.view
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.*
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.learnandroid.viewmodel.FirstScreenViewModel
@@ -54,5 +58,27 @@ fun FirstScreen(
         ) {
             Text("Login")
         }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text("Don't have an account?")
+            TextButton(onClick = {navController.navigate("register")}) {
+                Text("Register Now")
+            }
+        }
     }
+}
+
+@SuppressLint("ViewModelConstructorInComposable")
+@Preview(showBackground = true)
+@Composable
+fun FirstScreenPreview() {
+    FirstScreen(
+        viewModel = FirstScreenViewModel(),
+        navController = NavHostController(LocalContext.current)
+    )
 }
